@@ -67,7 +67,8 @@ class SchemaException extends \Doctrine\DBAL\DBALException
      */
     static public function tableAlreadyExists($tableName)
     {
-        return new self("The table with name '".$tableName."' already exists.", self::TABLE_ALREADY_EXISTS);
+        return new self("The table with name '".$tableName."' already exists."
+        ." This probably means that you are using the same tablename in several entities.", self::TABLE_ALREADY_EXISTS);
     }
 
     /**
